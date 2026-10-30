@@ -152,6 +152,7 @@ public class QueryGoal {
             int p = 0;
             while (p < s.length() && s.charAt(p) == space) p++;
             s = s.substring(p);
+            p = 0;
             if (s.length() == 0) return;
 
             // parse phrase
@@ -174,6 +175,7 @@ public class QueryGoal {
                 stop = s.charAt(0);
                 s = s.substring(1);
             }
+            if (s.length() == 0) return;
 
             if (stop == space) {
                 // For non-quoted strings, just skip to the next token
